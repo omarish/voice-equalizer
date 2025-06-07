@@ -1,14 +1,60 @@
 # Voice Equalizer 🗣️🎛️
 
-A light-weight, real-time microphone equalizer written in Python that you can route into OBS, Discord, Zoom, etc.
-
-I made this during this livestream: https://x.com/omarish/status/1931409094910357539
+A light-weight, real-time microphone equalizer written in Python that you can route into OBS, Discord, Zoom, etc. I made this during this livestream: https://x.com/omarish/status/1931409094910357539
 
 ## Why?
 
 * Audio quality can be the difference between a good and a great livestream.
-* There are things we can control, and things we can't control.
-* This lets you tune and run a live equalizer on your audio streams.
+
+## How to Run
+
+I've only designed this with MacOS in mind. PRs are welcome if you'd like to add support for other operating systems.
+
+### Setup
+
+(TODO: add setup instructions that use uv properly.)
+
+#### List your audio devices
+
+```sh
+python -m sounddevice
+```
+
+This will give you a list of sound devices, like this for example:
+
+```
+0 Built-in Microphone …
+1 MacBook Pro Speakers …
+2 BlackHole 2ch …
+```
+
+Pick your input and output. I recommend making your output BlackHole or something equivalent.
+
+### Tuning
+
+This will ask you for the sounds you want to include, and will record short samples of each.
+
+```sh
+make tune PRESET=livestreaming.json
+```
+
+### Running
+
+With that tuning preset, run like this:
+
+```sh
+make run PRESET=livestreaming.json INPUT="Yeti GX, Core Audio" OUTPUT="BlackHole 2ch, Core Audio"
+```
+
+This will run the equalizer in your terminal.
+
+If you want to see a visualization of this EQ, run the above command with GUI=1, and you'll get a visualization like this:
+
+![Equalizer Visualization](docs/eq.png)
+
+<video src="docs/eq.mp4" controls width="100%"></video>
+
+### List Audio Devices
 
 ## Default Preset
 
