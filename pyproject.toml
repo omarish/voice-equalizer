@@ -1,0 +1,26 @@
+[project]
+name = "voice-equalizer"
+version = "0.1.0"
+description = "Live microphone equalizer for streaming"
+authors = [
+    { name = "Omar Bohsali", email = "omar.bohsali@gmail.com" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "sounddevice>=0.4.6",
+    "scipy>=1.11",
+    "numpy>=1.25",
+    "soundfile>=0.12",
+    "matplotlib>=3.8",
+    "mypy>=1.15.0",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "ruff>=0.9.5",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+voice-equalizer = "voice_equalizer.__main__:main"
