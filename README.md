@@ -52,26 +52,6 @@ If you want to see a visualization of this EQ, run the above command with GUI=1,
 
 ![Equalizer Visualization](docs/eq.png)
 
-<video src="docs/eq.mp4" controls width="100%"></video>
-
-### List Audio Devices
-
-## Default Preset
-
-The default preset focuses on:
-
-* A gentle low-end boost for broadcast warmth
-* Clean removal of 60 Hz mains hum
-* Presence bump around 3 kHz so mechanical keyboard clicks sound crisp
-* High-pass + low-pass to keep HVAC rumble and bird chirps out
-* A simple noise-gate that mutes the mic when you are silent
-
-Feel free to tweak the filter design in `voice_equalizer/processing.py → design_eq()`.
-
-During the **tune** workflow you can now set custom Gain (dB) and Bandwidth **Q** for every detected band right in the terminal.
-
----
-
 ## Quick start
 
 1. **Install [UV](https://github.com/astral-sh/uv)** (if you haven't already):
